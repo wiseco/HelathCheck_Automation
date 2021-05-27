@@ -466,7 +466,7 @@
           <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
         </TestAction>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Account_ListAllAccounts" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Account_ListAllAccounts" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -475,6 +475,100 @@
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/v1/account?businessId=${C_Busid}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${C_AccessToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_URL3" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+            <stringProp name="RegexExtractor.refname">C_URL3</stringProp>
+            <stringProp name="RegexExtractor.regex">[^^]+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_ResponseMessage3" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">message</stringProp>
+            <stringProp name="RegexExtractor.refname">C_ResponseMessage3</stringProp>
+            <stringProp name="RegexExtractor.regex">\w+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_Responsecode3" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+            <stringProp name="RegexExtractor.refname">C_Responsecode3</stringProp>
+            <stringProp name="RegexExtractor.regex">\d+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_AccountNumber" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">C_AccountNumber</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;accountNumber&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_AccountIDPrimary" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">C_AccountIDPrimary</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1422950650">active</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="false">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Account_ListAllAccounts" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${Ip}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account?businessId=bus-20fb3abe-79ee-4c10-b64f-bb58ee251fd1</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -743,7 +837,7 @@
           <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
         </TestAction>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Card_GetCardDetailsbyID-Unredacted" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Card_GetCardDetailsbyID-Unredacted" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -826,7 +920,7 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="false">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
@@ -4063,7 +4157,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="payload" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;channel&quot;: &quot;#health_check&quot;, &quot;username&quot;: &quot;Platform_ProdTestEnv_HealthCheckAgent&quot;, &quot;text&quot;: &quot;`PostOrigination for payments as of : ${__time(yyyy-MM-dd&apos;T&apos;hh:mm:ss)}`  ```Identity:\nLogin ${C_Responsecode} ${C_ResponseMessage} ${C_URL} phone=${C_Phone}\nVerifyOTP ${C_Responsecode1} ${C_ResponseMessage1} ${C_URL1}\nLogout ${C_Responsecode40} ${C_ResponseMessage40} ${C_URL40}```\n```\nListAllBusiness ${C_Responsecode2} ${C_ResponseMessage2} ${C_URL2}\nListAllAccounts ${C_Responsecode3} ${C_ResponseMessage3} ${C_URL3}\nListAllContacts ${C_Responsecode4} ${C_ResponseMessage4} ${C_URL4} ${C_ContactID}\nListAllCards ${C_Responsecode5} ${C_ResponseMessage5} ${C_URL5}\nGetCardunredact ${C_Responsecode6} ${C_ResponseMessage6} ${C_URL6} Number:${C_CardDetails}```\n```\nSend-Payment\nIntraBank-Push:\nCreateSend ${C_Responsecode7} ${C_ResponseMessage7} ${C_URL7} status:${C_Status1}\nGetIntraBankStatus ${C_Responsecode8} ${C_ResponseMessage8} ${C_URL8}\nListAllIntraBank ${C_Responsecode9} ${C_ResponseMessage9} ${C_URL9}\nACH-Push:\nCreateACH ${C_Responsecode10} ${C_ResponseMessage10} ${C_URL10} status:${C_Status2}\nGetACHStatus ${C_Responsecode11} ${C_ResponseMessage11} ${C_URL11}\nPhysical Check:\nCreateCheck ${C_Responsecode12} ${C_ResponseMessage12} ${C_URL12} status:${C_Status3}\nGetCheckStatus ${C_Responsecode13} ${C_ResponseMessage13} ${C_URL13}\nUpdateCheck ${C_Responsecode14} ${C_ResponseMessage14} ${C_URL14}\nDomesticWire:\nCreateWire ${C_Responsecode15} ${C_ResponseMessage15} ${C_URL15} status:${C_Status4}\nGetWireStatus ${C_Responsecode16} ${C_ResponseMessage16} ${C_URL16}\nUpdateWire ${C_Responsecode17} ${C_ResponseMessage17} ${C_URL17}\nInternationalWire:\nCreateWire ${C_Responsecode18} ${C_ResponseMessage18} ${C_URL18} status:${C_Status5}\nGetWireStatus ${C_Responsecode19} ${C_ResponseMessage19} ${C_URL19}\nUpdateWire ${C_Responsecode20} ${C_ResponseMessage20} ${C_URL20}```\n```\nReceive-Payment\nIntraBank-Pull:\nCreateReceive ${C_Responsecode21} ${C_ResponseMessage21} ${C_URL21} status:${C_Status6}\nGetReceiveStatus ${C_Responsecode22} ${C_ResponseMessage22} ${C_URL22}\nUpdateReceive ${C_Responsecode23} ${C_ResponseMessage23} ${C_URL23}\nListReceive ${C_Responsecode24} ${C_ResponseMessage24} ${C_URL24}\nACH-Pull:\nCreateReceive ${C_Responsecode25} ${C_ResponseMessage25} ${C_URL25} status:${C_Status7}\nGetReceiveStatus ${C_Responsecode26} ${C_ResponseMessage26} ${C_URL26}\nUpdateReceive ${C_Responsecode27} ${C_ResponseMessage27} ${C_URL27}```&quot;, &quot;icon_emoji&quot;: &quot;:solid:&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;channel&quot;: &quot;#health_check&quot;, &quot;username&quot;: &quot;Platform_ProdTestEnv_HealthCheckAgent&quot;, &quot;text&quot;: &quot;`PostOrigination for payments as of : ${__time(yyyy-MM-dd&apos;T&apos;hh:mm:ss)}`  ```Identity:\nLogin ${C_Responsecode} ${C_ResponseMessage} ${C_URL} phone=${C_Phone}\nVerifyOTP ${C_Responsecode1} ${C_ResponseMessage1} ${C_URL1}\nLogout ${C_Responsecode40} ${C_ResponseMessage40} ${C_URL40}```\n```\nListAllBusiness ${C_Responsecode2} ${C_ResponseMessage2} ${C_URL2}\nListAllAccounts ${C_Responsecode3} ${C_ResponseMessage3} ${C_URL3}\nListAllContacts ${C_Responsecode4} ${C_ResponseMessage4} ${C_URL4} ${C_ContactID}\nListAllCards ${C_Responsecode5} ${C_ResponseMessage5} ${C_URL5}```\n```\nSend-Payment\nIntraBank-Push:\nCreateSend ${C_Responsecode7} ${C_ResponseMessage7} ${C_URL7} status:${C_Status1}\nGetIntraBankStatus ${C_Responsecode8} ${C_ResponseMessage8} ${C_URL8}\nListAllIntraBank ${C_Responsecode9} ${C_ResponseMessage9} ${C_URL9}\nACH-Push:\nCreateACH ${C_Responsecode10} ${C_ResponseMessage10} ${C_URL10} status:${C_Status2}\nGetACHStatus ${C_Responsecode11} ${C_ResponseMessage11} ${C_URL11}\nPhysical Check:\nCreateCheck ${C_Responsecode12} ${C_ResponseMessage12} ${C_URL12} status:${C_Status3}\nGetCheckStatus ${C_Responsecode13} ${C_ResponseMessage13} ${C_URL13}\nUpdateCheck ${C_Responsecode14} ${C_ResponseMessage14} ${C_URL14}\nDomesticWire:\nCreateWire ${C_Responsecode15} ${C_ResponseMessage15} ${C_URL15} status:${C_Status4}\nGetWireStatus ${C_Responsecode16} ${C_ResponseMessage16} ${C_URL16}\nUpdateWire ${C_Responsecode17} ${C_ResponseMessage17} ${C_URL17}\nInternationalWire:\nCreateWire ${C_Responsecode18} ${C_ResponseMessage18} ${C_URL18} status:${C_Status5}\nGetWireStatus ${C_Responsecode19} ${C_ResponseMessage19} ${C_URL19}\nUpdateWire ${C_Responsecode20} ${C_ResponseMessage20} ${C_URL20}```\n```\nReceive-Payment\nIntraBank-Pull:\nCreateReceive ${C_Responsecode21} ${C_ResponseMessage21} ${C_URL21} status:${C_Status6}\nGetReceiveStatus ${C_Responsecode22} ${C_ResponseMessage22} ${C_URL22}\nUpdateReceive ${C_Responsecode23} ${C_ResponseMessage23} ${C_URL23}\nListReceive ${C_Responsecode24} ${C_ResponseMessage24} ${C_URL24}\nACH-Pull:\nCreateReceive ${C_Responsecode25} ${C_ResponseMessage25} ${C_URL25} status:${C_Status7}\nGetReceiveStatus ${C_Responsecode26} ${C_ResponseMessage26} ${C_URL26}\nUpdateReceive ${C_Responsecode27} ${C_ResponseMessage27} ${C_URL27}```&quot;, &quot;icon_emoji&quot;: &quot;:solid:&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">payload</stringProp>
