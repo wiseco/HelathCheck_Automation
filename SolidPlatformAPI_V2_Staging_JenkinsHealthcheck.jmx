@@ -156,12 +156,12 @@
             </elementProp>
             <elementProp name="StartDate" elementType="Argument">
               <stringProp name="Argument.name">StartDate</stringProp>
-              <stringProp name="Argument.value">2021-03-01</stringProp>
+              <stringProp name="Argument.value">2021-04-01</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="EndDate" elementType="Argument">
               <stringProp name="Argument.name">EndDate</stringProp>
-              <stringProp name="Argument.value">2021-05-31</stringProp>
+              <stringProp name="Argument.value">2021-06-30</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -7846,7 +7846,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/statement/2021/5?email=true</stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/statement/2021/6?email=true</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -7930,7 +7930,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDSecondary}/statement/2021/5?email=true</stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDSecondary}/statement/2021/6?email=true</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
