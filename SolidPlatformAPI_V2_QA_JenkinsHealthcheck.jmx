@@ -742,7 +742,7 @@
 	&quot;idType&quot;: &quot;ssn&quot;,&#xd;
 	&quot;idNumber&quot;: &quot;${P_Last4TaxID}&quot;,&#xd;
 	&quot;dateOfBirth&quot;: &quot;1974-01-01&quot;,&#xd;
-	&quot;email&quot;: &quot;avinashc@wise.us&quot;,&#xd;
+	&quot;email&quot;: &quot;avinashc@solidfi.com&quot;,&#xd;
 	&quot;address&quot;: {&#xd;
 		&quot;addressType&quot;: &quot;mailing&quot;,&#xd;
 		&quot;line1&quot;: &quot;123 Main St&quot;,&#xd;
@@ -1018,7 +1018,7 @@
 	&quot;legalName&quot;: &quot;${P_LegalName}&quot;,&#xd;
 	&quot;entityType&quot;: &quot;limitedLiabilityCompany&quot;,&#xd;
 	&quot;dba&quot;: &quot;Superbank&quot;,&#xd;
-	&quot;email&quot;: &quot;${P_FName}@wise.us&quot;,&#xd;
+	&quot;email&quot;: &quot;avinashc@solidfi.com&quot;,&#xd;
 	&quot;phone&quot;:&quot;+1${P_BMobNumber}&quot;,&#xd;
 	&quot;idNumber&quot;: &quot;${P_BTaxID}&quot;,&#xd;
 	&quot;idType&quot;: &quot;ein&quot;,&#xd;
@@ -1577,7 +1577,7 @@
         &quot;idNumber&quot;: &quot;${P_OLast4TaxID}&quot;,&#xd;
         &quot;idType&quot;: &quot;ssn&quot;,&#xd;
         &quot;phone&quot;: &quot;+1${P_OMobnumber}&quot;,&#xd;
-        &quot;email&quot;: &quot;avinashc@wise.us&quot;,&#xd;
+        &quot;email&quot;: &quot;avinashc@solidfi.com&quot;,&#xd;
         &quot;dateOfBirth&quot;: &quot;1974-01-01&quot;,&#xd;
         &quot;address&quot;: {&#xd;
 		&quot;addressType&quot;: &quot;mailing&quot;,&#xd;
@@ -3174,7 +3174,7 @@
                 <stringProp name="Argument.value">{&#xd;
 	&quot;accountId&quot;: &quot;${C_AccountIDPrimary}&quot;,&#xd;
 	&quot;name&quot;: &quot;${__RandomString(9,vwuabcdefghijklmnop)}&quot;,&#xd;
-	&quot;email&quot;: &quot;avinashc@wise.us&quot;,&#xd;
+	&quot;email&quot;: &quot;avinashc@solidfi.com&quot;,&#xd;
 	&quot;phone&quot;: &quot;+16094740493&quot;,&#xd;
 	&quot;intrabank&quot;: {&#xd;
 		&quot;accountNumber&quot;: &quot;${C_AccountNumberSecondary}&quot;&#xd;
