@@ -161,7 +161,7 @@
             </elementProp>
             <elementProp name="EndDate" elementType="Argument">
               <stringProp name="Argument.name">EndDate</stringProp>
-              <stringProp name="Argument.value">2021-07-31</stringProp>
+              <stringProp name="Argument.value">2021-08-31</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -6436,7 +6436,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/statement/2021/7?email=true</stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/statement/2021/8?email=true</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -6520,7 +6520,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDSecondary}/statement/2021/7?email=true</stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDSecondary}/statement/2021/8?email=true</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
