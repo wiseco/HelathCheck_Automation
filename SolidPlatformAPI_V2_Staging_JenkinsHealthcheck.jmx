@@ -3067,7 +3067,7 @@
 	&quot;email&quot;: &quot;avinashc@solidfi.com&quot;,&#xd;
 	&quot;phone&quot;: &quot;+16094740493&quot;,&#xd;
 	&quot;intrabank&quot;: {&#xd;
-		&quot;accountNumber&quot;: &quot;${C_AccountNumberSecondary}&quot;&#xd;
+		&quot;accountNumber&quot;: &quot;9870001149677965&quot;&#xd;
 	},&#xd;
 	&quot;ach&quot;: {&#xd;
 		&quot;accountNumber&quot;: &quot;10984377345011&quot;,&#xd;
@@ -4109,7 +4109,7 @@
                 <stringProp name="Argument.value">{&#xd;
     &quot;accountId&quot;: &quot;${C_AccountIDPrimary}&quot;,&#xd;
     &quot;contactId&quot;: &quot;${C_ContactID}&quot;,&#xd;
-    &quot;amount&quot;: &quot;3.00&quot;,&#xd;
+    &quot;amount&quot;: &quot;20.99&quot;,&#xd;
     &quot;type&quot;: &quot;domestic&quot;,&#xd;
     &quot;description&quot;: &quot;Invoice Wire&quot;&#xd;
 }</stringProp>
@@ -4292,7 +4292,7 @@
                 <stringProp name="Argument.value">{&#xd;
     &quot;accountId&quot;: &quot;${C_AccountIDPrimary}&quot;,&#xd;
     &quot;contactId&quot;: &quot;${C_ContactID}&quot;,&#xd;
-    &quot;amount&quot;: &quot;3.50&quot;,&#xd;
+    &quot;amount&quot;: &quot;16.99&quot;,&#xd;
     &quot;type&quot;: &quot;international&quot;,&#xd;
     &quot;description&quot;: &quot;Invoice Wire&quot;&#xd;
 }</stringProp>
