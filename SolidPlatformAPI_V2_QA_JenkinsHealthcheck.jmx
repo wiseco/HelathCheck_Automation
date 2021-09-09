@@ -106,7 +106,7 @@
             </elementProp>
             <elementProp name="Thinktime" elementType="Argument">
               <stringProp name="Argument.name">Thinktime</stringProp>
-              <stringProp name="Argument.value">1000</stringProp>
+              <stringProp name="Argument.value">2500</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="P_Mobnumber" elementType="Argument">
@@ -5796,7 +5796,7 @@
               </elementProp>
               <elementProp name="maxAmount" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">1000</stringProp>
+                <stringProp name="Argument.value">100</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">maxAmount</stringProp>
@@ -5961,7 +5961,7 @@
               </elementProp>
               <elementProp name="maxAmount" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">1000</stringProp>
+                <stringProp name="Argument.value">100</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">maxAmount</stringProp>
@@ -6448,7 +6448,7 @@
               </elementProp>
               <elementProp name="maxAmount" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">1000</stringProp>
+                <stringProp name="Argument.value">100</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">maxAmount</stringProp>
