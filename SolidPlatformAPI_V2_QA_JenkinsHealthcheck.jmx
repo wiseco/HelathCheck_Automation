@@ -161,7 +161,7 @@
             </elementProp>
             <elementProp name="EndDate" elementType="Argument">
               <stringProp name="Argument.name">EndDate</stringProp>
-              <stringProp name="Argument.value">2021-09-30</stringProp>
+              <stringProp name="Argument.value">2021-10-31</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -4946,7 +4946,7 @@
               </elementProp>
               <elementProp name="card[exp_month]" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">8</stringProp>
+                <stringProp name="Argument.value">9</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">card[exp_month]</stringProp>
@@ -5377,7 +5377,7 @@
               </elementProp>
               <elementProp name="card[exp_month]" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">8</stringProp>
+                <stringProp name="Argument.value">9</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">card[exp_month]</stringProp>
@@ -7134,7 +7134,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/statement/2021/9?email=true</stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/statement/2021/10?email=true</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -7218,7 +7218,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDSecondary}/statement/2021/9?email=true</stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDSecondary}/statement/2021/10?email=true</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
