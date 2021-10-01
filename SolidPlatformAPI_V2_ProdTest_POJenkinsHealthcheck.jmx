@@ -104,7 +104,7 @@
             </elementProp>
             <elementProp name="EndDate" elementType="Argument">
               <stringProp name="Argument.name">EndDate</stringProp>
-              <stringProp name="Argument.value">2021-09-30</stringProp>
+              <stringProp name="Argument.value">2021-10-31</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -3275,7 +3275,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/statement/2021/9?email=true</stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/statement/2021/10?email=true</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
