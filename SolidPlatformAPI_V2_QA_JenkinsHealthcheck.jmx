@@ -106,7 +106,7 @@
             </elementProp>
             <elementProp name="Thinktime" elementType="Argument">
               <stringProp name="Argument.name">Thinktime</stringProp>
-              <stringProp name="Argument.value">2500</stringProp>
+              <stringProp name="Argument.value">4000</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="P_Mobnumber" elementType="Argument">
@@ -1933,7 +1933,7 @@
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_Busid" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_Busid" enabled="false">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">C_Busid</stringProp>
             <stringProp name="RegexExtractor.regex">businessId&quot;:&quot;(.*?)&quot;</stringProp>
@@ -4719,7 +4719,7 @@
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_ContactID" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_ContactID" enabled="false">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">C_ContactID</stringProp>
             <stringProp name="RegexExtractor.regex">id&quot;:&quot;(.*?)&quot;</stringProp>
