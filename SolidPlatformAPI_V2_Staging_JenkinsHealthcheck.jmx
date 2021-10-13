@@ -6995,7 +6995,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/transaction/${C_TxnIDCredit}</stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDSecondary}/transaction/${C_TxnIDCredit}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -7080,7 +7080,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDPrimary}/transaction/${C_TxnIDCredit}?export=pdf</stringProp>
+          <stringProp name="HTTPSampler.path">/v1/account/${C_AccountIDSecondary}/transaction/${C_TxnIDCredit}?export=pdf</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
