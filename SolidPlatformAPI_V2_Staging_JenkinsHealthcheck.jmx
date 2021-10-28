@@ -728,7 +728,7 @@
           <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
         </TestAction>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_CreateIdv-template" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_CreateIdv-template" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -820,13 +820,13 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="false">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">4000</stringProp>
         </TestAction>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_CreateInquiry" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_CreateInquiry" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -937,13 +937,13 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="false">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
         </TestAction>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_ApproveInquiry" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_ApproveInquiry" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -1039,13 +1039,13 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="false">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
         </TestAction>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_SubmitIDV" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_SubmitIDV" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1137,13 +1137,13 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="false">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
         </TestAction>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_GetIDVStatus" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_GetIDVStatus" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -1231,7 +1231,7 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="false">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
@@ -3510,12 +3510,12 @@
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">SD-Device-ID</stringProp>
-                <stringProp name="Header.value">${P_Deviceid}</stringProp>
+                <stringProp name="Header.name">sd-api-key</stringProp>
+                <stringProp name="Header.value">${APIKey}</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">Bearer ${C_AccessToken}</stringProp>
+                <stringProp name="Header.name">sd-person-id</stringProp>
+                <stringProp name="Header.value">${C_personId}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -3795,12 +3795,12 @@
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">SD-Device-ID</stringProp>
-                <stringProp name="Header.value">${P_Deviceid}</stringProp>
+                <stringProp name="Header.name">sd-api-key</stringProp>
+                <stringProp name="Header.value">${APIKey}</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">Bearer ${C_AccessToken}</stringProp>
+                <stringProp name="Header.name">sd-person-id</stringProp>
+                <stringProp name="Header.value">${C_personId}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -4069,12 +4069,12 @@
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">SD-Device-ID</stringProp>
-                <stringProp name="Header.value">${P_Deviceid}</stringProp>
+                <stringProp name="Header.name">sd-api-key</stringProp>
+                <stringProp name="Header.value">${APIKey}</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">Bearer ${C_AccessToken}</stringProp>
+                <stringProp name="Header.name">sd-person-id</stringProp>
+                <stringProp name="Header.value">${C_personId}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -4233,12 +4233,12 @@
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">SD-Device-ID</stringProp>
-                <stringProp name="Header.value">${P_Deviceid}</stringProp>
+                <stringProp name="Header.name">sd-api-key</stringProp>
+                <stringProp name="Header.value">${APIKey}</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">Bearer ${C_AccessToken}</stringProp>
+                <stringProp name="Header.name">sd-person-id</stringProp>
+                <stringProp name="Header.value">${C_personId}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -8531,7 +8531,7 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SlackIntegration_Persona" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SlackIntegration_Persona" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="payload" elementType="HTTPArgument">
