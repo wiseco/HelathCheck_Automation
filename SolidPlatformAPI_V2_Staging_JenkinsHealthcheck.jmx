@@ -106,7 +106,7 @@
             </elementProp>
             <elementProp name="Thinktime" elementType="Argument">
               <stringProp name="Argument.name">Thinktime</stringProp>
-              <stringProp name="Argument.value">1000</stringProp>
+              <stringProp name="Argument.value">2000</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="P_Mobnumber" elementType="Argument">
@@ -916,7 +916,7 @@
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
-          <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
+          <stringProp name="ActionProcessor.duration">5000</stringProp>
         </TestAction>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_GetIDVStatus" enabled="true">
