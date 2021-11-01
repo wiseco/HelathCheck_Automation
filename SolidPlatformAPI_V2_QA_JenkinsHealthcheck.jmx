@@ -916,7 +916,7 @@
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
-          <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
+          <stringProp name="ActionProcessor.duration">5000</stringProp>
         </TestAction>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Persona_GetIDVStatus" enabled="true">
