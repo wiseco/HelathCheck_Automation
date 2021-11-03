@@ -3998,6 +3998,33 @@
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_cvv" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">C_cvv</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;cvv&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_expiryMonth1" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">C_expiryMonth1</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;expiryMonth&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_expiryYear1" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">C_expiryYear1</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;expiryYear&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_URL130" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
             <stringProp name="RegexExtractor.refname">C_URL130</stringProp>
@@ -5372,7 +5399,7 @@
 	&quot;accountId&quot;: &quot;${C_AccountIDPrimary}&quot;,&#xd;
 	&quot;name&quot;: &quot;${__RandomString(9,vwuabcdefghijklmnop)}&quot;,&#xd;
 	&quot;email&quot;: &quot;avinashc@solidfi.com&quot;,&#xd;
-	&quot;phone&quot;: &quot;+16094740893&quot;,&#xd;
+	&quot;phone&quot;: &quot;+14346022109&quot;,&#xd;
 	&quot;intrabank&quot;: {&#xd;
 		&quot;accountNumber&quot;: &quot;9870001188710540&quot;&#xd;
 	},&#xd;
@@ -5808,6 +5835,199 @@
             <boolProp name="Assertion.assume_success">false</boolProp>
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Contact_CreateDebitCardToken" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${Ip}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/contact/${C_ContactID}/debitcard/token</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">sd-api-key</stringProp>
+                <stringProp name="Header.value">${APIKey}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">sd-person-id</stringProp>
+                <stringProp name="Header.value">${C_personId}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_debitcardToken" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">C_debitcardToken</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;debitCardToken&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1199484702">contact-debit-card</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_URL139" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+            <stringProp name="RegexExtractor.refname">C_URL139</stringProp>
+            <stringProp name="RegexExtractor.regex">[^^]+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_ResponseMessage139" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">message</stringProp>
+            <stringProp name="RegexExtractor.refname">C_ResponseMessage139</stringProp>
+            <stringProp name="RegexExtractor.regex">\w+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_Responsecode139" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+            <stringProp name="RegexExtractor.refname">C_Responsecode139</stringProp>
+            <stringProp name="RegexExtractor.regex">\d+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Contact_AddDebitCard" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;debitCard&quot;: {&#xd;
+		&quot;cardNumber&quot;: &quot;${C_cardNumber}&quot;,&#xd;
+		&quot;cvv&quot;: &quot;${C_cvv}&quot;,&#xd;
+		&quot;expiryMonth&quot;: &quot;${C_expiryMonth1}&quot;,&#xd;
+		&quot;expiryYear&quot;: &quot;${C_expiryYear1}&quot;&#xd;
+	}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${Ip}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/contact/${C_ContactID}/debitcard</stringProp>
+          <stringProp name="HTTPSampler.method">PATCH</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">sd-debitcard-token</stringProp>
+                <stringProp name="Header.value">${C_debitcardToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">sd-vgs-authorization</stringProp>
+                <stringProp name="Header.value">340b44bb073c191afe23a424dbc096a738c04463dc5f3c5df386a3b223230059</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="441514929">${C_cardNumber}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2114387085">${C_cvv}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_URL140" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+            <stringProp name="RegexExtractor.refname">C_URL140</stringProp>
+            <stringProp name="RegexExtractor.regex">[^^]+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_ResponseMessage140" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">message</stringProp>
+            <stringProp name="RegexExtractor.refname">C_ResponseMessage140</stringProp>
+            <stringProp name="RegexExtractor.regex">\w+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_Responsecode140" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+            <stringProp name="RegexExtractor.refname">C_Responsecode140</stringProp>
+            <stringProp name="RegexExtractor.regex">\d+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
           <hashTree/>
         </hashTree>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
@@ -6805,7 +7025,7 @@
           <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
         </TestAction>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send_CreateCard" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send_SolidCard" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -6880,6 +7100,103 @@
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_ResponseMessage138" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">message</stringProp>
             <stringProp name="RegexExtractor.refname">C_ResponseMessage138</stringProp>
+            <stringProp name="RegexExtractor.regex">\w+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1402931637">completed</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send_DebitCard" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;accountId&quot;: &quot;${C_AccountIDPrimary}&quot;,&#xd;
+    &quot;contactId&quot;: &quot;${C_ContactID}&quot;,&#xd;
+    &quot;amount&quot;: &quot;1.00&quot;,&#xd;
+    &quot;description&quot;: &quot;Send DebitCard&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${Ip}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/send/debitcard</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${C_AccessToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_Status26" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">C_Status26</stringProp>
+            <stringProp name="RegexExtractor.regex">status&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_URL141" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+            <stringProp name="RegexExtractor.refname">C_URL141</stringProp>
+            <stringProp name="RegexExtractor.regex">[^^]+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_Responsecode141" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+            <stringProp name="RegexExtractor.refname">C_Responsecode141</stringProp>
+            <stringProp name="RegexExtractor.regex">\d+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_ResponseMessage141" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">message</stringProp>
+            <stringProp name="RegexExtractor.refname">C_ResponseMessage141</stringProp>
             <stringProp name="RegexExtractor.regex">\w+</stringProp>
             <stringProp name="RegexExtractor.template">$0$</stringProp>
             <stringProp name="RegexExtractor.default">Error</stringProp>
@@ -7335,6 +7652,103 @@
             <stringProp name="RegexExtractor.default">Error</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${Thinktime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Receive_DebitCard" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;accountId&quot;: &quot;${C_AccountIDPrimary}&quot;,&#xd;
+    &quot;contactId&quot;: &quot;${C_ContactID}&quot;,&#xd;
+    &quot;amount&quot;: &quot;1.00&quot;,&#xd;
+    &quot;description&quot;: &quot;ReceiveDebitCard&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${Ip}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/receive/debitcard</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${C_AccessToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_Status27" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">C_Status27</stringProp>
+            <stringProp name="RegexExtractor.regex">status&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_URL142" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+            <stringProp name="RegexExtractor.refname">C_URL142</stringProp>
+            <stringProp name="RegexExtractor.regex">[^^]+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_ResponseMessage142" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">message</stringProp>
+            <stringProp name="RegexExtractor.refname">C_ResponseMessage142</stringProp>
+            <stringProp name="RegexExtractor.regex">\w+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="C_Responsecode142" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+            <stringProp name="RegexExtractor.refname">C_Responsecode142</stringProp>
+            <stringProp name="RegexExtractor.regex">\d+</stringProp>
+            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.default">Error</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-682587753">pending</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
           <hashTree/>
         </hashTree>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
@@ -10065,7 +10479,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="payload" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;channel&quot;: &quot;#health_check&quot;, &quot;username&quot;: &quot;Platform_QAEnv_HealthCheckAgent&quot;, &quot;text&quot;: &quot;`PostOrigination for payments as of : ${__time(yyyy-MM-dd&apos;T&apos;hh:mm:ss)}`  ```\nContact:\nCreateContact ${C_Responsecode29} ${C_ResponseMessage29} ${C_URL29}\nListAllContacts ${C_Responsecode30} ${C_ResponseMessage30} ${C_URL30} ${C_ContactID}\nGetContactById ${C_Responsecode31} ${C_ResponseMessage31} ${C_URL31}\nUpdateContact ${C_Responsecode32} ${C_ResponseMessage32} ${C_URL32}```\n```\nSend-Payment\nIntraBank-Push:\nCreateSend ${C_Responsecode52} ${C_ResponseMessage52} ${C_URL52} status:${C_Status18}\nGetIntraBankStatus ${C_Responsecode53} ${C_ResponseMessage53} ${C_URL53}\nListAllIntraBank ${C_Responsecode55} ${C_ResponseMessage55} ${C_URL55}\nACH-Push:\nCreateACH ${C_Responsecode68} ${C_ResponseMessage68} ${C_URL68} status:${C_Status19}\nGetACHStatus ${C_Responsecode69} ${C_ResponseMessage69} ${C_URL69}\nPhysical Check:\nCreateCheck ${C_Responsecode87} ${C_ResponseMessage87} ${C_URL87} status:${C_Status20}\nGetCheckStatus ${C_Responsecode88} ${C_ResponseMessage88} ${C_URL88}\nDomesticWire:\nCreateWire ${C_Responsecode90} ${C_ResponseMessage90} ${C_URL90} status:${C_Status21}\nGetWireStatus ${C_Responsecode91} ${C_ResponseMessage91} ${C_URL91}\nInternationalWire:\nCreateWire ${C_Responsecode93} ${C_ResponseMessage93} ${C_URL93} status:${C_Status22}\nGetWireStatus ${C_Responsecode94} ${C_ResponseMessage94} ${C_URL94}\nSendCard:\nCreateSendCard ${C_Responsecode138} ${C_ResponseMessage138} ${C_URL138} status:${C_Status25}```\n```\nReceive-Payment\nIntraBank-Pull:\nCreateReceive ${C_Responsecode96} ${C_ResponseMessage96} ${C_URL96} status:${C_Status23}\nGetReceiveStatus ${C_Responsecode97} ${C_ResponseMessage97} ${C_URL97}\nListReceive ${C_Responsecode99} ${C_ResponseMessage99} ${C_URL99}\nACH-Pull:\nCreateReceive ${C_Responsecode100} ${C_ResponseMessage100} ${C_URL100} status:${C_Status24}\nGetReceiveStatus ${C_Responsecode101} ${C_ResponseMessage101} ${C_URL101}```&quot;, &quot;icon_emoji&quot;: &quot;:solid:&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;channel&quot;: &quot;#health_check&quot;, &quot;username&quot;: &quot;Platform_QAEnv_HealthCheckAgent&quot;, &quot;text&quot;: &quot;`PostOrigination for payments as of : ${__time(yyyy-MM-dd&apos;T&apos;hh:mm:ss)}`  ```\nContact:\nCreateContact ${C_Responsecode29} ${C_ResponseMessage29} ${C_URL29}\nListAllContacts ${C_Responsecode30} ${C_ResponseMessage30} ${C_URL30} ${C_ContactID}\nGetContactById ${C_Responsecode31} ${C_ResponseMessage31} ${C_URL31}\nUpdateContact ${C_Responsecode32} ${C_ResponseMessage32} ${C_URL32}\nCreateDebitCardToken ${C_Responsecode139} ${C_ResponseMessage139} ${C_URL139}\nAddDebitCard ${C_Responsecode140} ${C_ResponseMessage140} ${C_URL140} Number: ${C_cardNumber}```\n```\nSend-Payment\nIntraBank-Push:\nCreateSend ${C_Responsecode52} ${C_ResponseMessage52} ${C_URL52} status:${C_Status18}\nGetIntraBankStatus ${C_Responsecode53} ${C_ResponseMessage53} ${C_URL53}\nListAllIntraBank ${C_Responsecode55} ${C_ResponseMessage55} ${C_URL55}\nACH-Push:\nCreateACH ${C_Responsecode68} ${C_ResponseMessage68} ${C_URL68} status:${C_Status19}\nGetACHStatus ${C_Responsecode69} ${C_ResponseMessage69} ${C_URL69}\nPhysical Check:\nCreateCheck ${C_Responsecode87} ${C_ResponseMessage87} ${C_URL87} status:${C_Status20}\nGetCheckStatus ${C_Responsecode88} ${C_ResponseMessage88} ${C_URL88}\nDomesticWire:\nCreateWire ${C_Responsecode90} ${C_ResponseMessage90} ${C_URL90} status:${C_Status21}\nGetWireStatus ${C_Responsecode91} ${C_ResponseMessage91} ${C_URL91}\nInternationalWire:\nCreateWire ${C_Responsecode93} ${C_ResponseMessage93} ${C_URL93} status:${C_Status22}\nGetWireStatus ${C_Responsecode94} ${C_ResponseMessage94} ${C_URL94}\nSolidCard:\nSendSolidCard ${C_Responsecode138} ${C_ResponseMessage138} ${C_URL138} status:${C_Status25}\nDebitCard:\nSendDebitCard ${C_Responsecode141} ${C_ResponseMessage141} ${C_URL141} status:${C_Status26}```\n```\nReceive-Payment\nIntraBank-Pull:\nCreateReceive ${C_Responsecode96} ${C_ResponseMessage96} ${C_URL96} status:${C_Status23}\nGetReceiveStatus ${C_Responsecode97} ${C_ResponseMessage97} ${C_URL97}\nListReceive ${C_Responsecode99} ${C_ResponseMessage99} ${C_URL99}\nACH-Pull:\nCreateReceive ${C_Responsecode100} ${C_ResponseMessage100} ${C_URL100} status:${C_Status24}\nGetReceiveStatus ${C_Responsecode101} ${C_ResponseMessage101} ${C_URL101}\nDebitCard:\nReceiveDebitCard ${C_Responsecode142} ${C_ResponseMessage142} ${C_URL142} status:${C_Status27}```&quot;, &quot;icon_emoji&quot;: &quot;:solid:&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">payload</stringProp>
